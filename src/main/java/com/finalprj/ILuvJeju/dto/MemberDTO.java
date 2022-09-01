@@ -22,6 +22,7 @@ public class MemberDTO {
     private String email;
     private String phone;
     private Character crleader;
+    private int role;
 
    public void setBirth(String birth) throws ParseException {
        SimpleDateFormat fm  = new SimpleDateFormat("yyyy-MM-dd");

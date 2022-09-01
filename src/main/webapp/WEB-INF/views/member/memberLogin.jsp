@@ -19,6 +19,7 @@
     </style>
     <script type="text/javascript" src="${pageContext.request.contextPath}/_js/mainJs.js"></script>
     <script>
+    	
         $(document).ready(function() {
             if(${result == "false"}){
                 alert("아이디와 비밀번호가 일치하지 않습니다.");
@@ -56,11 +57,11 @@
     <!-- loginForm -->
     <div id="memberL-container">
         <img id="memberL-container__image--small" src="${pageContext.request.contextPath}/_image/member/logo.png">
-
+		<h2>${pageContext.request.contextPath}</h2>
         <form action="${pageContext.request.contextPath}/login" method="post" name="loginForm" onsubmit="return loginCheck()">
             <div>
                 <input id="login_id" class="memberL-container__input--big" type="text" name="id" size="30"
-                       placeholder="아이디"> <br/>
+                       placeholder="아이디이이"> <br/>
                 <input id="login_pw" class="memberL-container__input--big" type="password" name="password" size="40"
                        placeholder="비밀번호"> <br/>
             </div>

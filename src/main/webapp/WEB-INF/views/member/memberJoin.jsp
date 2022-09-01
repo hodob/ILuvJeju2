@@ -104,7 +104,8 @@
             <h4 class="memberJ-container__h4--big">이름</h4>
             <input type="text" class="memberJ-container__input--big" name="name" maxlength="20">
             <div class="msg" id="validate_name"></div>
-
+            
+           
             <h4 class="memberJ-container__h4--big">닉네임</h4>
             <input type="text" class="memberJ-container__input--big" name="nickname" id="nickname" maxlength="20">
             <input type="hidden" name="check_nickname">

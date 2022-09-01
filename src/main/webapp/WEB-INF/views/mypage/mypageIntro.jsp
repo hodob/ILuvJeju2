@@ -33,7 +33,9 @@
             <img src="${pageContext.request.contextPath}/_image/profile/${member.member_img}">
         </div>
         <div id="header-miniprofile__info">
-            <span style="color:#37FFEB;" id="header-miniprofile__span--nickname">${member.nickname}</span><span id="header-miniprofile__span--white">님</span>
+            <span style="color:#37FFEB;" id="header-miniprofile__span--nickname">${member.nickname}</span>
+            <span style="color:#37FFEB;" id="header-miniprofile__span--nickname">${member.gender}</span>
+            <span id="header-miniprofile__span--white">님</span>
             <br/>
             안녕하세요
         </div>

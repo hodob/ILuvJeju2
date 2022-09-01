@@ -44,6 +44,7 @@ public interface MemberService {
                 .birth(dto.getBirth())
                 .member_img(dto.getMember_img())
                 .crleader(dto.getCrleader())
+                .role(dto.getRole())
                 .build();
         return entity;
     }
@@ -60,6 +61,7 @@ public interface MemberService {
                 .birth(member.getBirth())
                 .member_img(member.getMember_img())
                 .crleader(member.getCrleader())
+                .role(member.getRole())
                 .build();
         return dto;
     }

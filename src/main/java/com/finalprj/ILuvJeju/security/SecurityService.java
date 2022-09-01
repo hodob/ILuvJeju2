@@ -52,6 +52,7 @@ public class SecurityService implements UserDetailsService {
                 .gender(member.getGender())
                 .member_img(member.getMember_img())
                 .crleader(member.getCrleader())
+                .role(member.getRole())
                 .build();
 
         return new SecurityDetails(memberDTO);

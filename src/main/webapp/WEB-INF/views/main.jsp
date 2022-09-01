@@ -20,7 +20,6 @@
             if(${result == "true"}){
                 alert("로그아웃되었습니다.");
             }
-
             if(${removeResult == 0}){
                 alert("계정 탈퇴가 완료되었습니다. 그동안 이용해주셔서 감사합니다.");
             }
@@ -60,6 +59,7 @@
 
         <!--추천코스-->
         <div id="main_bestcourse">
+        <span style="color:#37FFEB;" id="header-miniprofile__span--nickname">${member.gender}</span>
             <p>BEST COURSE</p>
             <svg onclick="convertBeforeImg()" xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="#495c75"
                  style="vertical-align: top; padding-top: 80px" class="bi bi-caret-left" viewBox="0 0 16 16">

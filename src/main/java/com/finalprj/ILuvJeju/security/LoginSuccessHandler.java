@@ -16,10 +16,15 @@ public class LoginSuccessHandler implements AuthenticationSuccessHandler {
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) {
         try{
+        	System.out.println("LoginSuccessHandler 실행");
             MemberDTO dto = ((SecurityDetails)authentication.getPrincipal()).getMemberDTO();
+            System.out.println(dto.getRole());
+            System.out.println(dto);
             HttpSession session = request.getSession();
             session.setAttribute("member",dto);
-            response.sendRedirect("/ILuvJeju/main");
+            if(dto.getRole()==1) {
+            	response.sendRedirect("/ILuvJeju/test");
+            }else {response.sendRedirect("/ILuvJeju/main");}
         }catch (Exception e){
             System.out.println("LoginSuccessHandler err : " + e.getMessage());
         }
