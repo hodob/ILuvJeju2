@@ -16,12 +16,16 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.Map;
 
+<<<<<<< HEAD
 /*
  * 멤버 Controller
  *
  * @Author 백정연
  * @Date 2021/08/03
  */
+=======
+
+>>>>>>> mergetodoldolseo
 
 @Controller
 public class MemberController {

@@ -5,7 +5,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.multipart.MultipartFile;
 
+<<<<<<< HEAD
 import com.finalprj.ILuvJeju.dto.crew.CrewDTO;
+=======
+>>>>>>> mergetodoldolseo
 
 import javax.servlet.ServletContext;
 import java.io.File;
@@ -170,6 +173,7 @@ public class UploadFileUtil {
             e.printStackTrace();
         }
     }
+<<<<<<< HEAD
 
     //크루 활동글 삭제시 이미지삭제
     public void deleteCrewImages(Long postNo) {
@@ -234,5 +238,8 @@ public class UploadFileUtil {
         return crewImage.getName();
     }
 
+=======
+    
+>>>>>>> mergetodoldolseo
 }
 

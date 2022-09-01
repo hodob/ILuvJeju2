@@ -5,10 +5,13 @@ import org.springframework.data.domain.Pageable;
 
 import com.finalprj.ILuvJeju.domain.Member;
 import com.finalprj.ILuvJeju.dto.MemberDTO;
+<<<<<<< HEAD
 import com.finalprj.ILuvJeju.dto.crew.CrewCommentDTO;
 import com.finalprj.ILuvJeju.dto.crew.CrewDTO;
 import com.finalprj.ILuvJeju.dto.crew.CrewMemberDTO;
 import com.finalprj.ILuvJeju.dto.crew.CrewPostDTO;
+=======
+>>>>>>> mergetodoldolseo
 import com.finalprj.ILuvJeju.dto.review.ReviewCommentDTO;
 import com.finalprj.ILuvJeju.dto.review.ReviewDTO;
 
@@ -32,6 +35,7 @@ public interface MemberService {
     void deleteCommentListByUser(String id);
     void deleteCommentListByReviewNo(Long reviewNo);
     void updateMemberSecurity(MemberDTO dto, HttpSession session);
+<<<<<<< HEAD
     CrewDTO getCrew(String id);
     List<CrewMemberDTO> getCrewList(String id);
     List<CrewPostDTO> getCrewPostListByMember(String id);
@@ -40,6 +44,8 @@ public interface MemberService {
     void deleteCrewCommentListByUser(String id);
     void deleteCrewCommentListByPostNo(Long postNo);
     void deleteCrewMember(String id);
+=======
+>>>>>>> mergetodoldolseo
 
     int deleteMember(String id);
 
@@ -58,7 +64,10 @@ public interface MemberService {
                 .phone(dto.getPhone())
                 .birth(dto.getBirth())
                 .member_img(dto.getMember_img())
+<<<<<<< HEAD
                 .crleader(dto.getCrleader())
+=======
+>>>>>>> mergetodoldolseo
                 .build();
         return entity;
     }
@@ -74,7 +83,10 @@ public interface MemberService {
                 .phone(member.getPhone())
                 .birth(member.getBirth())
                 .member_img(member.getMember_img())
+<<<<<<< HEAD
                 .crleader(member.getCrleader())
+=======
+>>>>>>> mergetodoldolseo
                 .build();
         return dto;
     }

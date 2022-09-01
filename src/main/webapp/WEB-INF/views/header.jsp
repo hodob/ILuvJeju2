@@ -11,7 +11,11 @@
 </script>
 <%-- 날씨 위젯 --%>
 <script>
+<<<<<<< HEAD
     var apiURI = "http://api.openweathermap.org/data/2.5/weather?q=Seoul,kr&appid=876eb9965cb5694a2644df701fa197dd";
+=======
+    var apiURI = "http://api.openweathermap.org/data/2.5/weather?q=Jeju,kr&appid=eaf2f0d8050f1b6dbcd30125420c8623";
+>>>>>>> mergetodoldolseo
     $j1124.ajax({
         url: apiURI,
         dataType: "json",
@@ -66,7 +70,11 @@
     <!--날씨-->
     <div id="headerM-weatherBox">
         <div id="headerM-weatherBox__area">
+<<<<<<< HEAD
             <h4>Seoul,KR</h4>
+=======
+            <h4>Jeju,KR</h4>
+>>>>>>> mergetodoldolseo
         </div>
         <div id="headerM-weatherBox__icon">
             <img id="weatherImg">
@@ -112,12 +120,16 @@
                               onmouseout="this.style.color='white';">REVIEW</span>
                 </a>
             </li>
+<<<<<<< HEAD
             <li>
                 <a href="${pageContext.request.contextPath}/crewL">
                         <span onmouseover="this.style.color='#FF8000';"
                               onmouseout="this.style.color='white';">CREW</span>
                 </a>
             </li>
+=======
+            
+>>>>>>> mergetodoldolseo
         </ul>
     </div>
 

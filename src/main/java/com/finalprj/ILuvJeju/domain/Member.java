@@ -3,6 +3,7 @@ package com.finalprj.ILuvJeju.domain;
 import lombok.*;
 import javax.persistence.*;
 
+<<<<<<< HEAD
 import com.finalprj.ILuvJeju.domain.crew.Crew;
 
 import java.util.Date;
@@ -13,6 +14,12 @@ import java.util.Date;
  * @Author 백정연
  * @Date 2021/08/03
  */
+=======
+
+import java.util.Date;
+
+
+>>>>>>> mergetodoldolseo
 
 @Entity
 @Table(name="MEMBER_TBL")
@@ -33,5 +40,8 @@ public class Member {
     private String gender;
     private String email;
     private String phone;
+<<<<<<< HEAD
     private Character crleader;
+=======
+>>>>>>> mergetodoldolseo
 }

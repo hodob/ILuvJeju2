@@ -15,16 +15,22 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.finalprj.ILuvJeju.dto.MemberDTO;
 import com.finalprj.ILuvJeju.dto.PlannerDTO;
+<<<<<<< HEAD
 import com.finalprj.ILuvJeju.dto.crew.CrewCommentDTO;
 import com.finalprj.ILuvJeju.dto.crew.CrewDTO;
 import com.finalprj.ILuvJeju.dto.crew.CrewMemberDTO;
 import com.finalprj.ILuvJeju.dto.crew.CrewPostDTO;
+=======
+>>>>>>> mergetodoldolseo
 import com.finalprj.ILuvJeju.dto.review.ReviewCommentDTO;
 import com.finalprj.ILuvJeju.dto.review.ReviewDTO;
 import com.finalprj.ILuvJeju.service.MemberService;
 import com.finalprj.ILuvJeju.service.impl.PlanServiceImpl;
 import com.finalprj.ILuvJeju.service.impl.PlannerServiceImpl;
+<<<<<<< HEAD
 import com.finalprj.ILuvJeju.service.impl.crew.CrewBoardServiceImpl;
+=======
+>>>>>>> mergetodoldolseo
 import com.finalprj.ILuvJeju.service.impl.review.ReviewServiceImpl;
 import com.finalprj.ILuvJeju.util.PagingUtil;
 import com.finalprj.ILuvJeju.util.UploadFileUtil;
@@ -34,12 +40,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
+<<<<<<< HEAD
 /*
  *  마이 페이지 Controller
  *
  * @Author 백정연
  * @Date 2021/08/03
  */
+=======
+
+>>>>>>> mergetodoldolseo
 
 @Controller
 public class MyPageController {
@@ -60,9 +70,12 @@ public class MyPageController {
     private ReviewServiceImpl reviewService;
 
     @Autowired
+<<<<<<< HEAD
     private CrewBoardServiceImpl crewBoardService;
 
     @Autowired
+=======
+>>>>>>> mergetodoldolseo
     UploadFileUtil fileUtil;
 
     @RequestMapping("/updateMember")
@@ -78,6 +91,7 @@ public class MyPageController {
         // 스프링 시큐리티 세션 갱신
         service.updateMemberSecurity(updatedUser, session);
 
+<<<<<<< HEAD
         // 크루 목록 생성
         CrewDTO crewDTO = service.getCrew(dto.getId());
         List<CrewMemberDTO> crewMemberDTO = service.getCrewList(dto.getId());
@@ -97,6 +111,8 @@ public class MyPageController {
         model.addAttribute("crewComment_startBlockPage", crewCommentPagingUtil.startBlockPage);
         model.addAttribute("crewComment_endBlockPage", crewCommentPagingUtil.endBlockPage);
         model.addAttribute("crewCommentList", crewCommentList);
+=======
+>>>>>>> mergetodoldolseo
 
         // 사용자 후기글 목록
         Page<ReviewDTO> reviewList = service.getReviewListByUser(dto.getId(), pageable);
@@ -118,6 +134,7 @@ public class MyPageController {
     @RequestMapping("/mypageD")
     public String mypageDetail(@PageableDefault(size = 5, sort = "wDate", direction = Sort.Direction.DESC) Pageable pageable
                                 ,MemberDTO dto, Model model) throws Exception{
+<<<<<<< HEAD
         // 크루 목록 생성
         CrewDTO crewDTO = service.getCrew(dto.getId());
         List<CrewMemberDTO> crewMemberDTO = service.getCrewList(dto.getId());
@@ -137,6 +154,8 @@ public class MyPageController {
         model.addAttribute("crewComment_startBlockPage", crewCommentPagingUtil.startBlockPage);
         model.addAttribute("crewComment_endBlockPage", crewCommentPagingUtil.endBlockPage);
         model.addAttribute("crewCommentList", crewCommentList);
+=======
+>>>>>>> mergetodoldolseo
 
 
         // 사용자 후기글 목록
@@ -176,6 +195,7 @@ public class MyPageController {
             fileUtil.deleteImages(reviewDTO.getReviewNo());
         }
 
+<<<<<<< HEAD
         // 사용자 크루 게시판 글,댓글 삭제
         service.deleteCrewCommentListByUser(dto.getId());
         List<CrewPostDTO> crewPostList = service.getCrewPostListByMember(dto.getId());
@@ -187,6 +207,8 @@ public class MyPageController {
 
         // 사용자 크루 탈퇴
         service.deleteCrewMember(dto.getId());
+=======
+>>>>>>> mergetodoldolseo
 
         // 사용자 프로필, 계정 삭제
         MemberDTO member = service.selectMember(dto.getId());

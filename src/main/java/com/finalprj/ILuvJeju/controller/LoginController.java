@@ -13,12 +13,16 @@ import com.finalprj.ILuvJeju.service.LoginService;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+<<<<<<< HEAD
 /*
  *  로그인, 로그아웃 Controller
  *
  * @Author 백정연
  * @Date 2021/08/03
  */
+=======
+
+>>>>>>> mergetodoldolseo
 
 @Controller
 public class LoginController {

@@ -6,12 +6,16 @@ import org.springframework.security.web.authentication.AuthenticationFailureHand
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+<<<<<<< HEAD
 /*
  * 로그인 실패시 실행되는 Handler
  *
  * @Author 백정연
  * @Date 2021/08/14
  */
+=======
+
+>>>>>>> mergetodoldolseo
 
 public class LoginFailHandler implements AuthenticationFailureHandler {
     @Override

@@ -18,12 +18,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.servlet.jsp.JspContext;
 
+<<<<<<< HEAD
 /*
  * DB에서 유저 정보를 가져와 처리하는 클래스
  *
  * @Author 백정연
  * @Date 2021/08/14
  */
+=======
+
+>>>>>>> mergetodoldolseo
 
 @Service
 public class SecurityService implements UserDetailsService {
@@ -51,7 +55,10 @@ public class SecurityService implements UserDetailsService {
                 .birth(member.getBirth())
                 .gender(member.getGender())
                 .member_img(member.getMember_img())
+<<<<<<< HEAD
                 .crleader(member.getCrleader())
+=======
+>>>>>>> mergetodoldolseo
                 .build();
 
         return new SecurityDetails(memberDTO);
