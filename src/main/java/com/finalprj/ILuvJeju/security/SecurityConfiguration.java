@@ -33,7 +33,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
    @Override
     protected void configure(HttpSecurity security) throws Exception {
        // antMatchers() 안에 비회원도 접속할 수 있는 url 적으심 됩니다
-        security.authorizeRequests().antMatchers("/main","/memberL","/memberJ","/memberP","/memberR","/member/**","/register" ,"/areaD","/areaL").permitAll()
+        security.authorizeRequests().antMatchers("/main","/test","/memberL","/memberJ","/memberP","/memberR","/member/**","/register" ,"/areaD","/areaL").permitAll()
                 .antMatchers(HttpMethod.GET,"/review").permitAll()
                 .antMatchers(HttpMethod.GET,"/review/{reviewNo}").permitAll()
                 .antMatchers(HttpMethod.GET,"/review/{reviewNo}/comment").permitAll()

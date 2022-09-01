@@ -19,6 +19,7 @@ public interface LoginService {
                 .birth(dto.getBirth())
                 .member_img(dto.getMember_img())
                 .crleader(dto.getCrleader())
+                .role(dto.getRole())
                 .build();
         return entity;
     }
@@ -35,6 +36,7 @@ public interface LoginService {
                 .birth(member.getBirth())
                 .member_img(member.getMember_img())
                 .crleader(member.getCrleader())
+                .role(member.getRole())
                 .build();
         return dto;
     }
