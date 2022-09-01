@@ -6,12 +6,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-/*
- * 멤버 DTO 클래스
- *
- * @Author 백정연
- * @Date 2021/08/03
- */
 
 @NoArgsConstructor
 @AllArgsConstructor

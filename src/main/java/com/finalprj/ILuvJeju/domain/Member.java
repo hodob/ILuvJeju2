@@ -3,7 +3,6 @@ package com.finalprj.ILuvJeju.domain;
 import lombok.*;
 import javax.persistence.*;
 
-import com.finalprj.ILuvJeju.domain.crew.Crew;
 
 import java.util.Date;
 
