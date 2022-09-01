@@ -6,8 +6,8 @@
 -->
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
-<jsp:useBean id="mapFactory" class="com.finalprj.doldolseo.util.CodeMapFactory"/>
-<%@ page import="com.finalprj.doldolseo.util.DateTimeFormatUtil" %>
+<jsp:useBean id="mapFactory" class="com.finalprj.ILuvJeju.util.CodeMapFactory"/>
+<%@ page import="com.finalprj.ILuvJeju.util.DateTimeFormatUtil" %>
 
 <!DOCTYPE html>
 <html>

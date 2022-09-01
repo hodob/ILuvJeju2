@@ -10,7 +10,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
 <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
-<%@ page import="com.finalprj.doldolseo.util.DateTimeFormatUtil" %>
+<%@ page import="com.finalprj.ILuvJeju.util.DateTimeFormatUtil" %>
 <c:set var="dateYMD" value="${DateTimeFormatUtil.changeToYMD(review.WDate)}"/>
 <!DOCTYPE html>
 <html>
