@@ -22,16 +22,21 @@ repositories {
 war.enabled = true
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'mysql:mysql-connector-java'   
-	 implementation 'org.springframework.boot:spring-boot-starter-data-jpa'    
 
-    runtimeOnly 'mysql:mysql-connector-java'
+
+	
+	// https://mvnrepository.com/artifact/org.mariadb.jdbc/mariadb-java-client
+	// 마리아 DB 의존성
+	implementation group: 'org.mariadb.jdbc', name: 'mariadb-java-client', version: '2.7.4'
+
+
+
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'    
 
     providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-    
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'    
     
     
     compileOnly 'org.projectlombok:lombok:1.18.24'
