@@ -18,10 +18,6 @@ public interface LoginService {
                 .phone(dto.getPhone())
                 .birth(dto.getBirth())
                 .member_img(dto.getMember_img())
-<<<<<<< HEAD
-                .crleader(dto.getCrleader())
-=======
->>>>>>> mergetodoldolseo
                 .build();
         return entity;
     }
@@ -37,10 +33,6 @@ public interface LoginService {
                 .phone(member.getPhone())
                 .birth(member.getBirth())
                 .member_img(member.getMember_img())
-<<<<<<< HEAD
-                .crleader(member.getCrleader())
-=======
->>>>>>> mergetodoldolseo
                 .build();
         return dto;
     }

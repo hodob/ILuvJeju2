@@ -217,9 +217,6 @@
     </div>
     </form>
     <!-- // container -->
-<<<<<<< HEAD
-
-=======
     
 	<!-- 권한주기 -->
 		<div class="form-group">
@@ -230,6 +227,5 @@
 			</select>
 		</div>
 		<!-- //권한주기 -->
->>>>>>> mergetodoldolseo
 </body>
 </html>

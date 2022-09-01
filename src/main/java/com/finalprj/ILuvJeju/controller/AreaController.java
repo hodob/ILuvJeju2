@@ -13,16 +13,7 @@ import com.finalprj.ILuvJeju.dto.AreaDTO;
 import com.finalprj.ILuvJeju.service.impl.AreaServiceImpl;
 import com.finalprj.ILuvJeju.util.PagingUtil;
 
-<<<<<<< HEAD
-/*
- * 지역게시판 Controller
- *
- * @Author 김경일
- * @Date 2021/08/04
- */
-=======
 
->>>>>>> mergetodoldolseo
 
 @Controller
 public class AreaController {
