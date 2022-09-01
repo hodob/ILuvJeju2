@@ -1,9 +1,4 @@
-<!--
-작성자: 백정연
-페이지이름: memberJoin.jsp
-페이지설명: 개인정보 입력 및 프로필 사진을 등록하여 회원가입을 진행하는 페이지
-페이지 생성일: 210721
--->
+
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <!DOCTYPE html>

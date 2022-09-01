@@ -61,7 +61,7 @@
                 <tr class="list--header">
                     <td style="width: 100px">지역</td>
                     <td>제목</td>
-                    <td style="width: 100px">닉네임</td>
+                    <td style="width: 100px">아이디</td>
                     <td style="width: 150px">등록일</td>
                     <td style="width: 100px">조회수</td>
                 </tr>

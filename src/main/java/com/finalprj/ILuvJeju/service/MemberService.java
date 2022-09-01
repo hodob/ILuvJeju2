@@ -5,10 +5,7 @@ import org.springframework.data.domain.Pageable;
 
 import com.finalprj.ILuvJeju.domain.Member;
 import com.finalprj.ILuvJeju.dto.MemberDTO;
-import com.finalprj.ILuvJeju.dto.crew.CrewCommentDTO;
-import com.finalprj.ILuvJeju.dto.crew.CrewDTO;
-import com.finalprj.ILuvJeju.dto.crew.CrewMemberDTO;
-import com.finalprj.ILuvJeju.dto.crew.CrewPostDTO;
+
 import com.finalprj.ILuvJeju.dto.review.ReviewCommentDTO;
 import com.finalprj.ILuvJeju.dto.review.ReviewDTO;
 
@@ -16,12 +13,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
 
-/*
- * 멤버 관련 service
- *
- * @Author 백정연
- * @Date 2021/08/03
- */
+
 
 public interface MemberService {
     MemberDTO save(MemberDTO memberDTO) throws IOException;
@@ -32,14 +24,7 @@ public interface MemberService {
     void deleteCommentListByUser(String id);
     void deleteCommentListByReviewNo(Long reviewNo);
     void updateMemberSecurity(MemberDTO dto, HttpSession session);
-    CrewDTO getCrew(String id);
-    List<CrewMemberDTO> getCrewList(String id);
-    List<CrewPostDTO> getCrewPostListByMember(String id);
-    Page<CrewPostDTO> getCrewPostListByUser(String id, Pageable pageable);
-    Page<CrewCommentDTO> getCrewCommentListByUser(String id, Pageable pageable);
-    void deleteCrewCommentListByUser(String id);
-    void deleteCrewCommentListByPostNo(Long postNo);
-    void deleteCrewMember(String id);
+
 
     int deleteMember(String id);
 
@@ -58,7 +43,6 @@ public interface MemberService {
                 .phone(dto.getPhone())
                 .birth(dto.getBirth())
                 .member_img(dto.getMember_img())
-                .crleader(dto.getCrleader())
                 .build();
         return entity;
     }
@@ -74,7 +58,6 @@ public interface MemberService {
                 .phone(member.getPhone())
                 .birth(member.getBirth())
                 .member_img(member.getMember_img())
-                .crleader(member.getCrleader())
                 .build();
         return dto;
     }

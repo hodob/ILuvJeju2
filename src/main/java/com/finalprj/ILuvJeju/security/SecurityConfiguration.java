@@ -17,12 +17,6 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
-/*
- * Security Class
- *
- * @Author 백정연
- * @Date 2021/08/13
- */
 
 @RequiredArgsConstructor
 @Configuration
@@ -43,9 +37,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.GET,"/review").permitAll()
                 .antMatchers(HttpMethod.GET,"/review/{reviewNo}").permitAll()
                 .antMatchers(HttpMethod.GET,"/review/{reviewNo}/comment").permitAll()
-                .antMatchers(HttpMethod.GET,"/crewL").permitAll()
-                .antMatchers(HttpMethod.GET,"/crewD").permitAll()
-                .antMatchers(HttpMethod.GET,"/crew/board").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()

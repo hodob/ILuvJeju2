@@ -29,16 +29,4 @@ public class ImageController {
         }
     }
 
-    @PostMapping("/image/crew")
-    public ResponseEntity<?> imageUploadCrew(@RequestParam("file") MultipartFile file) {
-        try {
-            String filePath = service.store_crew(file);
-            return ResponseEntity.ok().body(filePath);
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            return ResponseEntity.badRequest().build();
-        }
-    }
-
 }

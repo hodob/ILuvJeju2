@@ -1,10 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: young
-  Date: 2021-07-22
-  Time: 오후 6:33
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
@@ -16,12 +10,12 @@
     <div id="footer_container">
         <div id="footer_content">
             <?xml version="1.0" ?>
-            Copyright © DOLDOLSEO All Right Reserved <br/>
-              KKI BJY LY / 2021-07-06 - 2021-08-19 <br/><br/><br/>
+            Copyright © ILuvJeju All Right Reserved <br/>
+              KKI BJY LY / 2022-09-01 - 2022-09-14 <br/><br/><br/>
 
             <a href="${pageContext.request.contextPath}/memberP">이용약관 </a>  |  <a href="${pageContext.request.contextPath}/memberR">개인정보이용동의서</a>
             <br>
-            개인정보관리 책임자 : 백정연 (jyjy@naver.com)
+            개인정보관리 책임자 : 이신명 (dta4718@naver.com)
         </div>
     </div>
 </body>

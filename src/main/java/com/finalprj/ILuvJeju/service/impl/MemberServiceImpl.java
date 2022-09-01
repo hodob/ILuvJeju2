@@ -13,24 +13,15 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.finalprj.ILuvJeju.domain.Member;
-import com.finalprj.ILuvJeju.domain.crew.Crew;
-import com.finalprj.ILuvJeju.domain.crew.CrewComment;
-import com.finalprj.ILuvJeju.domain.crew.CrewMember;
-import com.finalprj.ILuvJeju.domain.crew.CrewPost;
+
 import com.finalprj.ILuvJeju.domain.review.Review;
 import com.finalprj.ILuvJeju.domain.review.ReviewComment;
 import com.finalprj.ILuvJeju.dto.MemberDTO;
-import com.finalprj.ILuvJeju.dto.crew.CrewCommentDTO;
-import com.finalprj.ILuvJeju.dto.crew.CrewDTO;
-import com.finalprj.ILuvJeju.dto.crew.CrewMemberDTO;
-import com.finalprj.ILuvJeju.dto.crew.CrewPostDTO;
+
 import com.finalprj.ILuvJeju.dto.review.ReviewCommentDTO;
 import com.finalprj.ILuvJeju.dto.review.ReviewDTO;
 import com.finalprj.ILuvJeju.repository.MemberRepository;
-import com.finalprj.ILuvJeju.repository.crew.CrewBoardRepository;
-import com.finalprj.ILuvJeju.repository.crew.CrewCommentRepository;
-import com.finalprj.ILuvJeju.repository.crew.CrewMemberRepository;
-import com.finalprj.ILuvJeju.repository.crew.CrewRepository;
+
 import com.finalprj.ILuvJeju.repository.review.ReviewCommentRepository;
 import com.finalprj.ILuvJeju.repository.review.ReviewRepository;
 import com.finalprj.ILuvJeju.security.SecurityDetails;
@@ -41,12 +32,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 
-/*
- * 멤버 Service 구현 클래스
- *
- * @Author 백정연
- * @Date 2021/08/03
- */
+
 
 @Service
 public class MemberServiceImpl implements MemberService {
@@ -56,18 +42,6 @@ public class MemberServiceImpl implements MemberService {
 
     @Autowired
     private ReviewRepository reviewRepository;
-
-    @Autowired
-    private CrewRepository crewRepository;
-
-    @Autowired
-    private CrewMemberRepository crewMemberRepository;
-
-    @Autowired
-    private CrewBoardRepository crewBoardRepository;
-
-    @Autowired
-    private CrewCommentRepository crewCommentRepository;
 
     @Autowired
     private ModelMapper modelMapper;
@@ -91,7 +65,7 @@ public class MemberServiceImpl implements MemberService {
         return dto;
     }
 
-    //temp BY gyeong
+
     public MemberDTO updateMmeber(MemberDTO memberDTO) throws IOException {
 
         Member memberEntity = dtoToEntity(memberDTO);
@@ -146,58 +120,6 @@ public class MemberServiceImpl implements MemberService {
         session.setAttribute("SPRING_SECURITY_CONTEXT", newAuth);
     }
 
-    // 사용자 크루 조회 (크루장)
-    @Override
-    public CrewDTO getCrew(String id) {
-        Crew crew = crewRepository.findByMemberId(id);
-        CrewDTO dto = null;
-        if(crew != null){
-            dto = modelMapper.map(crew, CrewDTO.class);
-        }
-        return dto;
-    }
-
-    // 사용자 크루 조회 (크루원)
-    @Override
-    public List<CrewMemberDTO> getCrewList(String id) {
-        Member member = repository.findById(id).get();
-        List<CrewMember> crew = crewMemberRepository.findAllByMemberId(id);
-        List<CrewMemberDTO> dto = null;
-        if(crew != null){
-            dto = modelMapper.map(crew, new TypeToken<List<CrewMemberDTO>>() {
-            }.getType());
-        }
-
-        return dto;
-    }
-
-    @Override
-    public List<CrewPostDTO> getCrewPostListByMember(String id) {
-        List<CrewPost> entityPage = crewBoardRepository.findAllByMemberId(id);
-        List<CrewPostDTO> list = modelMapper.map(entityPage,
-                new TypeToken<List<CrewPostDTO>>() {
-                }.getType());
-        return list;
-    }
-
-    @Override
-    public Page<CrewPostDTO> getCrewPostListByUser(String id, Pageable pageable) {
-        Page<CrewPost> entityPage = crewBoardRepository.findAllByMemberId(id, pageable);
-        Page<CrewPostDTO> list = modelMapper.map(entityPage,
-                new TypeToken<Page<CrewPostDTO>>() {
-                }.getType());
-        return list;
-    }
-
-    @Override
-    public Page<CrewCommentDTO> getCrewCommentListByUser(String id, Pageable pageable) {
-        Page<CrewComment> entityPage = crewCommentRepository.findAllByMemberId(id, pageable);
-        Page<CrewCommentDTO> list = modelMapper.map(entityPage,
-                new TypeToken<Page<CrewCommentDTO>>() {
-                }.getType());
-        return list;
-    }
-
     @Override
     public Page<ReviewDTO> getReviewListByUser(String id, Pageable pageable) {
         Page<Review> entityPage = reviewRepository.findAllByMemberId(id, pageable);
@@ -226,22 +148,6 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
-    public void deleteCrewMember(String id) {
-        crewMemberRepository.deleteAllByMemberId(id);
-    }
-
-    @Override
-    public void deleteCrewCommentListByUser(String id) {
-        crewCommentRepository.deleteAllByMemberId(id);
-    }
-
-    @Override
-    public void deleteCrewCommentListByPostNo(Long postNo) {
-        crewCommentRepository.deleteAllByCrewPostPostNo(postNo);
-    }
-
-
-    @Override
     public void deleteCommentListByUser(String id) {
         commentRepository.deleteAllByMemberId(id);
     }
@@ -251,7 +157,7 @@ public class MemberServiceImpl implements MemberService {
         commentRepository.deleteAllByReview_ReviewNo(reviewNo);
     }
 
-    //메소드 추가 by gyeong
+
     public void setMemberToCrleader(String id, HttpSession session){
         MemberDTO dto = selectMember(id);
         dto.setCrleader('y');

@@ -14,11 +14,11 @@ import java.util.UUID;
 public class ImageService {
 
     private final Path reviewLocation;
-    private final Path crewLocation;
+
 
     public ImageService(String uploadPath) {
         this.reviewLocation = Paths.get(uploadPath + "/review/temp");
-        this.crewLocation = Paths.get(uploadPath + "/crew/board/temp");
+
         System.out.println(reviewLocation.toString());
     }
 
@@ -40,24 +40,7 @@ public class ImageService {
         }
     }
 
-    //이미지 파일을 로컬환경에 저장(크루)
-    public String store_crew(MultipartFile file) throws Exception {
-        try {
-            if (file.isEmpty()) {
-                throw new Exception("Failed to store empty file " + file.getOriginalFilename());
-            }
-
-            String saveFileName = fileSave(crewLocation.toString(), file); //이미지파일 _image/crew/board/temp/UUID+파일명 으로 저장
-            System.out.println(saveFileName);
-
-            return "/_image" + saveFileName.split("_image")[1]; //절대경로 -> _image/crew/board/temp..
-//            return saveFileName;
-
-        } catch (IOException e) {
-            throw new Exception("Failed to store file " + file.getOriginalFilename(), e);
-        }
-    }
-
+    
     //파일 저장
     public String fileSave(String rootLocation, MultipartFile file) throws IOException {
         File uploadDir = new File(rootLocation);
