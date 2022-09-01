@@ -217,15 +217,6 @@
     </div>
     </form>
     <!-- // container -->
-    
-	<!-- 권한주기 -->
-		<div class="form-group">
-			<label for="role">role:</label> 
-			<select class="form-control" id="role" name="role">
-				<option value="USER">USER(default)</option>
-				<option value="ADMIN">ADMIN</option>
-			</select>
-		</div>
-		<!-- //권한주기 -->
+
 </body>
 </html>

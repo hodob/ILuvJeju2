@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.finalprj.ILuvJeju.dto.crew.CrewDTO;
 
 import javax.servlet.ServletContext;
 import java.io.File;
@@ -169,6 +170,69 @@ public class UploadFileUtil {
             e.printStackTrace();
         }
     }
-    
+
+    //크루 활동글 삭제시 이미지삭제
+    public void deleteCrewImages(Long postNo) {
+
+        Path path = Paths.get(rootLocation.toString() + "/crew/board/" + postNo);
+        File imageDir = new File(path.toString());
+
+        if (imageDir.exists()) {
+            File[] files = imageDir.listFiles();
+
+            if (files != null) {
+                for (int i = 0; i < files.length; i++) {
+                    boolean isDeleted = files[i].delete();
+                    if (isDeleted) {
+                        System.out.println(i + "번 파일 삭제 성공");
+                    }
+                }
+            }
+        }
+
+        try {
+            Files.delete(path);
+            System.out.println(postNo + "번 이미지 디렉토리 삭제 됨");
+        } catch (IOException e) {
+            System.out.println(postNo + "번 이미지 디렉토리 삭제 실패");
+            e.printStackTrace();
+        }
+    }
+
+    //크루 이미지 저장 (기존 이미지 있으면 삭제하고 새로 저장)
+    public String crewImgSave(MultipartFile crewImageFile, CrewDTO dto) throws IOException {
+
+        File crewImage;
+
+        //기존이미지 삭제 (업데이트 시)
+        if (dto.getCrewImage() != null) {
+            Path path = Paths.get(rootLocation.toString() + "/crew/logo/" + dto.getCrewImage());
+            File oldImg = new File(path.toString());
+
+            if (oldImg.exists()) {
+                boolean isDeleteSuccess = oldImg.delete();
+                if (isDeleteSuccess) {
+                    System.out.println("기존 이미시 삭제 성공");
+                } else {
+                    System.out.println("기존 이미시 삭제 실패");
+                }
+            }
+        }
+
+        if (!crewImageFile.isEmpty()) {
+            //파일 이름 : 크루이름.확장자
+            String[]  filenameSplit = crewImageFile.getOriginalFilename().split("\\.");
+            String crewImageName = dto.getCrewName() + "." + filenameSplit[filenameSplit.length-1];
+            String crewImagePath = rootLocation.toString() + "/crew/logo/" + crewImageName;
+
+            crewImage = new File(crewImagePath);
+            crewImageFile.transferTo(crewImage);
+        } else {
+            return null;
+        }
+
+        return crewImage.getName();
+    }
+
 }
 
