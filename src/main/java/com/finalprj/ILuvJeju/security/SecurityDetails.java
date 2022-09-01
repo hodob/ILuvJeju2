@@ -10,7 +10,12 @@ import com.finalprj.ILuvJeju.dto.MemberDTO;
 import java.util.ArrayList;
 import java.util.Collection;
 
-
+/*
+ * 사용자 정보를 담아두는 클래스
+ *
+ * @Author 백정연
+ * @Date 2021/08/14
+ */
 
 @Data
 public class SecurityDetails implements UserDetails {

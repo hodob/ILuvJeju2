@@ -18,6 +18,7 @@ public interface LoginService {
                 .phone(dto.getPhone())
                 .birth(dto.getBirth())
                 .member_img(dto.getMember_img())
+                .crleader(dto.getCrleader())
                 .build();
         return entity;
     }
@@ -33,6 +34,7 @@ public interface LoginService {
                 .phone(member.getPhone())
                 .birth(member.getBirth())
                 .member_img(member.getMember_img())
+                .crleader(member.getCrleader())
                 .build();
         return dto;
     }

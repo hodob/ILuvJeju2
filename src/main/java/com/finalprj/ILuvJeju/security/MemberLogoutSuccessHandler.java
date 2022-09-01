@@ -6,7 +6,12 @@ import org.springframework.security.web.authentication.logout.LogoutSuccessHandl
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
+/*
+ * 로그아웃 성공시 실행되는 Handler
+ *
+ * @Author 백정연
+ * @Date 2021/08/14
+ */
 
 public class MemberLogoutSuccessHandler implements LogoutSuccessHandler {
     @Override
