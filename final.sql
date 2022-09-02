@@ -1,16 +1,16 @@
---날짜테이블 생성
+-- 날짜테이블 생성
 drop table date_t;
-create table date_t (ds varchar2(10) NOT NULL PRIMARY KEY);
---데이터 입력
+create table date_t (ds varchar(10) NOT NULL PRIMARY KEY);
+-- --데이터 입력
 insert into date_t
 SELECT TO_CHAR( TO_DATE('20180101', 'YYYYMMDD') + ROWNUM-1, 'YYYYMMDD') AS DAY
 FROM DUAL
 CONNECT BY level <= ROUND( TO_DATE('20241231', 'YYYYMMDD') - TO_DATE('20180101', 'YYYYMMDD') );
 commit;
 drop table hotelchain;
---호텔체인 생성
+-- --호텔체인 생성
 create table hotelchain(krchainname varchar2(100) NOT NULL PRIMARY KEY, engchainname varchar2(100));
---데이터 입력
+-- --데이터 입력
 insert into hotelchain values('jw메리어트','jwmarriotthotel');
 insert into hotelchain values('노보텔','novotelhotel');
 insert into hotelchain values('라마다','ramadahotel');
@@ -32,10 +32,10 @@ insert into hotelchain values('베니키아','benikeahotel');
 insert into hotelchain values('신라호텔','shillahotel');
 insert into hotelchain values('파크하얏트','parkhyatthotel');
 
---(국내)항공사 입력
+-- --(국내)항공사 입력
 drop table airline;
 create table airline(airname varchar2(100) NOT NULL PRIMARY KEY);
---데이터 입력
+-- --데이터 입력
 insert into airline values('대한항공');
 insert into airline values('아시아나항공');
 insert into airline values('티웨이항공');
@@ -47,10 +47,10 @@ insert into airline values('이스타항공');
 insert into airline values('플라이강원');
 insert into airline values('에어로케이항공');
 
---(국내)공항 입력
+-- --(국내)공항 입력
 drop table airport;
 create table airport(portname varchar2(100) NOT NULL PRIMARY KEY);
---데이터 입력
+-- --데이터 입력
 insert into airport values('김포국제공항');
 insert into airport values('김해국제공항');
 insert into airport values('제주국제공항');
@@ -59,7 +59,7 @@ insert into airport values('청주국제공항');
 insert into airport values('무안국제공항');
 insert into airport values('인천국제공항');
 
---숙소등록요청할때사용할 임시테이블들
+-- --숙소등록요청할때사용할 임시테이블들
 DROP TABLE PERIOD_TEMP CASCADE CONSTRAINTS;
 DROP TABLE ADDITIONAL_FEE_TEMP CASCADE CONSTRAINTS;
 DROP TABLE ACCOMMODATIONS_TEMP CASCADE CONSTRAINTS;
@@ -367,7 +367,7 @@ CREATE TABLE ACCOMMODATIONS
 -- 추가요금
 CREATE TABLE ADDITIONAL_FEE
 (
-	-- 추가비용아이디
+	 -- 추가비용아이디
 	AFID NUMBER(4) NOT NULL,
 	-- 인원추가비용
 	AFPERSONNEL NUMBER(10),
@@ -677,7 +677,7 @@ CREATE TABLE ROOM_INFO
 -- 문의글
 CREATE TABLE USERQNA
 (
-	-- 문의글아이디
+	-- -- 문의글아이디
 	QID NUMBER(4) NOT NULL,
 	-- 문의글카테고리 : 1.상품 2.교환/환불 3.사이트이용 4.기타
 	QCATE VARCHAR2(20),
@@ -840,4 +840,4 @@ ALTER TABLE RESERVATION
 
 
 
---sql초기세팅
+-- --sql초기세팅
